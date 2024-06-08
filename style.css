@@ -3,23 +3,42 @@
 body {
   margin: 0px;
   font-family: 'Roboto',sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 50px;
+  min-width: 830px;
 }
 
 header {
   text-align: center;
   background-color: rgb(186, 186, 186);
   padding: 10px;
-  height: 10%
+  height: 10%;
+  min-width: 830px;
+}
+
+button {
+  border-style: none;
+  padding: 15px;
+  border-radius: 50px;
+  width: 200px;
+  align-self: center;
 }
 
 .shelves {
   display: grid;
-  grid-template-columns: repeat(4, minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
   gap: 10px;
   grid-auto-rows: 300px;
+  align-items: end;
+  justify-items: center;
+  min-width: 830px;
 }
 
 .book {
-  height: 150px;
-  width: 75px;
+  height: 250px;
+  width: 150px;
+  border-style: solid;
 }
