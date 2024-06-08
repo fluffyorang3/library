@@ -17,6 +17,7 @@ function Book(title, author, pages, read) {
     return `${title} by ${author}, ${pages} pages, ${this.read()}`
   }
 }
+
 function addBookToLibrary(title, author, pages, read) {
   let newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
@@ -24,6 +25,6 @@ function addBookToLibrary(title, author, pages, read) {
 
 function displayOnShelves() {
   myLibrary.forEach() {
-    
+
   }
 }
