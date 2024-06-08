@@ -23,8 +23,33 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(newBook);
 }
 
-function displayOnShelves() {
+/*function displayOnShelves() {
   myLibrary.forEach() {
 
   }
-}
+}*/
+
+const book = document.querySelector(".book")
+
+const shelf = document.querySelector(".shelf")
+
+const newBookButton = document.querySelector(".add-book")
+
+const dialog = document.querySelector("dialog");
+
+newBookButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+

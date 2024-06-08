@@ -19,7 +19,7 @@ header {
   min-width: 830px;
 }
 
-.add {
+.add-book {
   border-style: none;
   padding: 15px;
   border-radius: 50px;
@@ -27,7 +27,16 @@ header {
   align-self: center;
 }
 
-.shelves {
+form {
+  display: grid;
+  grid-template-columns: 100px 200px;
+  grid-template-rows: repeat(6, 30px);
+  align-items: center;
+  justify-items: start;
+  gap: 20px;
+}
+
+.shelf {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
   gap: 10px;
@@ -76,5 +85,14 @@ header {
 
 .close-book {
   border-radius: 15px;
+}
+
+.add-book-dialog {
+  border-style: none;
+  padding: 15px;
+  border-radius: 50px;
+  width: 200px;
+  grid-area: 6 / 1 / 7 / 3;
+  justify-self: center;
 }
 
