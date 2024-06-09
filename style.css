@@ -27,6 +27,15 @@ header {
   align-self: center;
 }
 
+.add-book:hover {
+  border-style: none;
+  padding: 15px;
+  border-radius: 50px;
+  width: 200px;
+  align-self: center;
+  box-shadow: inset 1px 1px 3px;
+}
+
 form {
   display: grid;
   grid-template-columns: 100px 200px;
@@ -84,7 +93,22 @@ form {
 }
 
 .close-book {
-  border-radius: 15px;
+  border-radius: 30px;
+  border-style: none;
+  padding: 5px;
+  height: 20px;
+  width: 20px;
+  font-size: 10px;
+}
+
+.close-book:hover {
+  border-radius: 30px;
+  border-style: none;
+  padding: 5px;
+  height: 20px;
+  width: 20px;
+  font-size: 10px;
+  box-shadow: inset 1px 1px 3px;
 }
 
 .add-book-dialog {
@@ -94,5 +118,38 @@ form {
   width: 200px;
   grid-area: 6 / 1 / 7 / 3;
   justify-self: center;
+}
+
+.add-book-dialog:hover {
+  border-style: none;
+  padding: 15px;
+  border-radius: 50px;
+  width: 200px;
+  grid-area: 6 / 1 / 7 / 3;
+  justify-self: center;
+  box-shadow: inset 1px 1px 3px;
+}
+
+.close-form {
+  position:relative;
+  top: -50px;
+  left: 290px;
+  border-radius: 30px;
+  border-style: none;
+  padding: 5px;
+  height: 30px;
+  width: 30px;
+}
+
+.close-form:hover {
+  position:relative;
+  top: -50px;
+  left: 290px;
+  border-radius: 30px;
+  border-style: none;
+  padding: 5px;
+  height: 30px;
+  width: 30px;
+  box-shadow: inset 1px 1px 3px;
 }
 

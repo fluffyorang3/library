@@ -37,9 +37,39 @@ const newBookButton = document.querySelector(".add-book")
 
 const dialog = document.querySelector("dialog");
 
+const dialogClose = document.querySelector(".close-form")
+
+const bookForm = document.getElementById("book-form");
+
+const bookSubmit = document.querySelector(".add-book-dialog")
+
+bookForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  let author = document.getElementById('author').value;
+  let title = document.getElementById('title').value;
+  let pages = document.getElementById('pages').value;
+  let read = document.querySelector('input[name="read-status"]:checked').value;
+
+  myLibrary.push(new Book(author, title, pages, read));
+
+  console.log(myLibrary)
+})
+
+
+dialogClose.addEventListener("click", () => {
+  dialog.close();
+})
+
 newBookButton.addEventListener("click", () => {
   dialog.showModal();
 });
+
+bookSubmit.addEventListener("click", () => {
+  dialog.close();
+})
+
+
 
 
 
