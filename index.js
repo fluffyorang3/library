@@ -1,27 +1,17 @@
 const myLibrary = [];
 
+let booksDOM = [];
+
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = function() {
-    if(read == "read") {
-      return "read";
-    } else if(read == "not read") {
-      return "not read yet";
-    } else {
-      return "info not available";
-    }
-  }
+  this.read = read;
   this.info = function() {
     return `${title} by ${author}, ${pages} pages, ${this.read()}`
   }
 }
 
-function addBookToLibrary(title, author, pages, read) {
-  let newBook = new Book(title, author, pages, read);
-  myLibrary.push(newBook);
-}
 
 /*function displayOnShelves() {
   myLibrary.forEach() {
@@ -46,14 +36,19 @@ const bookSubmit = document.querySelector(".add-book-dialog")
 bookForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  let author = document.getElementById('author').value;
   let title = document.getElementById('title').value;
+  let author = document.getElementById('author').value;
   let pages = document.getElementById('pages').value;
   let read = document.querySelector('input[name="read-status"]:checked').value;
 
-  myLibrary.push(new Book(author, title, pages, read));
 
-  console.log(myLibrary)
+  myLibrary.push(new Book(title, author, pages, read));
+
+
+  bookForm.reset();
+  dialog.close();
+
+  addBookToLibrary();
 })
 
 
@@ -65,9 +60,23 @@ newBookButton.addEventListener("click", () => {
   dialog.showModal();
 });
 
-bookSubmit.addEventListener("click", () => {
-  dialog.close();
-})
+function addBookToLibrary() {
+  shelf.innerHTML = ""
+  booksDOM = [];
+  myLibrary.forEach((book) => {
+    let newBook = 
+    ` <div class="book" id="${book.title}">
+        <p class="author">${book.author}</p>
+        <button class="close-book" id=close${book}>X</button>
+        <p class="title">${book.title}</p>
+        <p class="pages">Nr. of Pages ${book.pages}</p>
+        <div class="read-not-read">
+          ${book.read}
+        </div>
+      </div>`
+      shelf.insertAdjacentHTML('beforeend',newBook);
+  })
+}
 
 
 
